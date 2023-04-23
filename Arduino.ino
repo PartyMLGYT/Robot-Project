@@ -1,13 +1,14 @@
 #include "functions.h"
+#include <Servo.h>
+
 
 void setup() {
-    pinMode(LED_BUILTIN, OUTPUT);
+    Serial.begin(9600);
+    motor.attach(PIN_PWM);
 }
 
 void loop() {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(3000);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(3000);
+    motorController();
+    findDistance();
 }
 
